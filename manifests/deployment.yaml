@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myaksautocontdep
+  labels:
+    app: myaksautocontdep
+  namespace: myaks2023
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myaksautocontdep
+  template:
+    metadata:
+      labels:
+        app: myaksautocontdep
+    spec:
+      containers:
+        - name: myaksautocontdep
+          image: myacr2023.azurecr.io/image-workflow-1685035079530:latest
+          ports:
+            - containerPort: 5000

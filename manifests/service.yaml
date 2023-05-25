@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: myaksautocontdep
+  namespace: myaks2023
+spec:
+  type: LoadBalancer
+  selector:
+    app: myaksautocontdep
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
