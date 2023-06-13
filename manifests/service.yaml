@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: myaksautocontdep
-  namespace: myaks2023
+  name: ex-votting-app-wk
+  namespace: ex-votting-app-ns
 spec:
   type: LoadBalancer
   selector:
-    app: myaksautocontdep
+    app: ex-votting-app-wk
   ports:
     - protocol: TCP
-      port: 5000
-      targetPort: 5000
+      port: 8080
+      targetPort: 8080
