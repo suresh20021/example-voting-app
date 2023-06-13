@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myaksautocontdep
+  name: ex-votting-app-wk
   labels:
-    app: myaksautocontdep
-  namespace: myaks2023
+    app: ex-votting-app-wk
+  namespace: ex-votting-app-ns
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: myaksautocontdep
+      app: ex-votting-app-wk
   template:
     metadata:
       labels:
-        app: myaksautocontdep
+        app: ex-votting-app-wk
     spec:
       containers:
-        - name: myaksautocontdep
-          image: myacr2023.azurecr.io/image-workflow-1685035079530:latest
+        - name: ex-votting-app-wk
+          image: acraksdem.azurecr.io/ex-votting-app-img:latest
           ports:
-            - containerPort: 5000
+            - containerPort: 8080
